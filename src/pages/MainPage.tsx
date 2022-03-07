@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Content from "../components/Content";
-import Canvas from "../components/Canvas";
+import Canvas from "../components/canvas/Canvas";
 
 const MainPage: React.FC = () => {
   return (

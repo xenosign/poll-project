@@ -1,5 +1,8 @@
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import "./Canvas.css";
+import { Wave } from "./wave.js";
+import { SurferController } from "./surfer-controlloer.js";
+import { Sun } from "./sun.js";
 
 interface CanvasProps {
   width: number;
@@ -25,6 +28,7 @@ function Canvas({ width, height }: CanvasProps) {
     }
 
     const canvas: HTMLCanvasElement = canvasRef.current;
+
     return {
       x: event.pageX - canvas.offsetLeft,
       y: event.pageY - canvas.offsetTop,
@@ -58,6 +62,7 @@ function Canvas({ width, height }: CanvasProps) {
 
   const startPaint = useCallback((event: MouseEvent) => {
     const coordinates = getCoordinates(event);
+    console.log(coordinates);
 
     if (coordinates) {
       setIsPainting(true);
