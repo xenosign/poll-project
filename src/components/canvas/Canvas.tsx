@@ -57,7 +57,7 @@ function Canvas() {
     };
 
     //render();
-    requestAnimationFrame(aniRender);
+    //requestAnimationFrame(aniRender);
   }, [ctx]);
 
   return (
