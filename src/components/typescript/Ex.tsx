@@ -34,17 +34,12 @@ function Ex() {
       ok: false,
     };
 
-    // 함수 선언
-    function add(a: number, b: number) {
-      return a + b;
-    }
-
     // Optional Param
     function optionalAdd(a: number, b: number, c?: number) {
       return a + b + c;
     }
 
-    console.log(optionalAdd(1, 2));
+    // console.log(optionalAdd(1, 2));
 
     function optionalAdd2(a: number, b: number, c?: number) {
       let sum: number = 0;
@@ -56,14 +51,81 @@ function Ex() {
       return sum;
     }
 
-    console.log(optionalAdd2(1, 2));
+    //console.log(optionalAdd2(1, 2));
 
     // defalut Param
     function defaultFunc(name: string = "LHS") {
       console.log(name);
     }
 
-    console.log(defaultFunc());
+    //console.log(defaultFunc());
+
+    // 함수 선언
+    let addFunc: Function = function add(a: number, b: number) {
+      return a + b;
+    };
+
+    let add2 = function add2(a: number, b: number): string {
+      return "str";
+    };
+
+    let testVariable: Function;
+    testVariable = add2;
+
+    console.log("Type of without type declaration: ", typeof addFunc);
+    console.log("Type of with type declaration: ", typeof add2);
+
+    function voidFunc(): undefined {
+      console.log("!!");
+      return undefined;
+    }
+
+    console.log(voidFunc());
+
+    voidFunc();
+
+    function anyFunc(): unknown {
+      console.log("ANY");
+      let any: any = 1;
+      console.log(typeof any);
+    }
+
+    console.log(anyFunc());
+
+    function restFunc(str1: string, str2: string, ...restStr): string {
+      console.log(restStr);
+      return str1 + str2 + restStr.join("");
+    }
+
+    console.log(restFunc("aa", "bb", "cc", "dd", "ee", "ff"));
+
+    function argFunc(): void {
+      for (let i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    }
+
+    argFunc(
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a",
+      "a"
+    );
   });
 
   return <div></div>;
