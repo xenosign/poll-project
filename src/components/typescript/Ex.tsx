@@ -84,7 +84,7 @@ function Ex() {
 
     voidFunc();
 
-    function anyFunc(): unknown {
+    function anyFunc(): any {
       console.log("ANY");
       let any: any = 1;
       console.log(typeof any);
@@ -104,28 +104,6 @@ function Ex() {
         console.log(arguments[i]);
       }
     }
-
-    argFunc(
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a",
-      "a"
-    );
   });
 
   return <div></div>;
